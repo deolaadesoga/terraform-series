@@ -16,6 +16,7 @@ provider "aws" {
 
 module "db" {
     source = "./db"
+    # the ./ means it is in the same directory, if the default value is not passed, we can pass it here, e.g. ec2name = "Demo.ec2"
 
 }
 
