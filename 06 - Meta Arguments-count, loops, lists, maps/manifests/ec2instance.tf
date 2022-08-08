@@ -7,7 +7,7 @@ resource "aws_instance" "myec2" {
   user_data = file("${path.module}/app1-install.sh")
   key_name = var.instance_keypair
   vpc_security_group_ids = [ aws_security_group.vpc-ssh.id, aws_security_group.vpc-web.id   ]
-  count = 1
+  count = 1 # Count is a meta argument, This means you are provisioning 1 instance
   tags = {
     "Name" = "Prod-${count.index}"
   }
