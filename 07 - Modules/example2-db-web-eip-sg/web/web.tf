@@ -12,6 +12,7 @@ output "pub_ip" {
     value = module.eip.PublicIP
 }
 
+    # This module is a child module because we are calling it in another module and the ../ means it is 2 directories back
 module "eip" {
     source = "../eip"
     instance_id = aws_instance.web.id
