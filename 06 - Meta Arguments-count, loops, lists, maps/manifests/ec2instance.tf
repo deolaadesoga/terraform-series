@@ -9,7 +9,7 @@ resource "aws_instance" "myec2" {
   vpc_security_group_ids = [ aws_security_group.vpc-ssh.id, aws_security_group.vpc-web.id   ]
   count = 1 # Count is a meta argument, This means you are provisioning 1 instance
   tags = {
-    "Name" = "Prod-${count.index}"
+    "Name" = "Prod-${count.index}" # This will be the anem assigned to the instance.. eg Prod 0, Prod 1 etc
   }
 }
 
