@@ -8,6 +8,8 @@ variable "egress" {
     default = [80,443]
 }
 
+# It is better to further modularize this file by adding the a variable file for the ports
+
 output "sg_name" {
     value = aws_security_group.web_traffic.name
 }
